@@ -4,6 +4,10 @@ import json
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return "welcome to ssw api."
+
 @app.route("/get-drivers-list/", methods=["POST"])
 def get_drivers():
     content_json = request.json
