@@ -2,11 +2,6 @@ import requests, os, csv, time, random, pandas as pd
 from bs4 import BeautifulSoup
 from datetime import date, datetime
 
-# dominio = "NCL"
-# cpf = "16426671703"
-# Usuario = "matheus"
-# Senha = "JET8@K[3"
-
 class SSW:
     def __init__(self, domain, cpf, user, password):
         self.domain = domain
