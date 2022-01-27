@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "welcome to ssw api."
+    return "welcome to ssw WebService."
 
 @app.route("/get-drivers-list/", methods=["POST"])
 def get_drivers():
