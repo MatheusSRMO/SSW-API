@@ -31,4 +31,4 @@ def get_plates():
     return json.dumps(SSW(domain, cpf, user, password).marked_notes(notes))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5000)
