@@ -64,7 +64,7 @@ class SSW:
             if len(lineList) > 2 and i != 0:
                 mot.append(lineList[2])
         return mot
-    def Retornos(self, notas:list):
+    def returns(self, notas:list):
         data_atual = date.today()
         data_atual_ano = int(data_atual.year)
         data_atual_mes = int(data_atual.month)
@@ -112,7 +112,7 @@ class SSW:
                 'seq_ctrc': var
             }
             requests.post("https://sistema.ssw.inf.br/bin/ssw0122", headers=self.header, data=payload)
-    def Extrair(self, source : str):
+    def to_extract(self, source : str):
         arquivo = pd.read_excel(source)
         notas = []
         for linha in arquivo["NACIONAL LOGISTICA - FRISA              "]:
@@ -169,7 +169,7 @@ class SSW:
         url_csv = f"https://sistema.ssw.inf.br/bin/ssw0424?act={vaz}.html&filename=CSVmotoristas.sswweb&path=&down=1&nw=1"
         csv_wb = requests.get(url_csv, headers=self.header)
         return busca(var)
-    def Gerar(self, placa, motorista : str, notas : list):
+    def generate_romane(self, placa, motorista : str, notas : list):
         token, header = self.LoginSSW(tokenBoolen=True)
         cpf_motorista = self.BaixaMotorista(motorista)
         nome_completo_motorista = motorista
@@ -345,4 +345,3 @@ class SSW:
         return {
             "marked_notes": score
         }
-
