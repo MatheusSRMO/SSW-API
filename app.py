@@ -23,7 +23,7 @@ def get_plates():
     return json.dumps(SSW(domain, cpf, user, password).get_plates_list())
 
 @app.route("/marked_notes/", methods=["POST"])
-def get_plates():
+def marked_notes():
     content_json = request.json
     domain, cpf, user, password = content_json["domain"], content_json["cpf"], content_json["user"], content_json["password"]
     notes = content_json["notes"]
